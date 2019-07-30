@@ -19,7 +19,10 @@
       "src": "src/stylesheets/**/*.scss"
     },
     "scripts": {
-      "src": "src/scripts/**/*.js"
+      "src": "src/scripts/CommonJs/*.js"
+    },
+    "es_scripts": {
+      "src": "src/scripts/ES6/*.js"
     },
     "html": {
       "src": "src/pages/**/*.html"
@@ -36,6 +39,7 @@
   "license": "ISC",
   "description": "JavaScript Module design pattern implementation",
   "devDependencies": {
+    "@babel/preset-env": "^7.5.5",
     "autoprefixer": "^9.6.1",
     "babelify": "^10.0.0",
     "browser-sync": "^2.26.7",

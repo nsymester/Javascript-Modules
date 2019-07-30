@@ -10,7 +10,7 @@ const browserSync = require('browser-sync').create();
 const { html } = require('./html');
 const { nunjucks } = require('./nunjucks');
 const { css, analyse } = require('./styles');
-const { scripts } = require('./scripts');
+const { scripts, es_scripts } = require('./scripts');
 const { browserify } = require('./browserify');
 const { metrics } = require('./metrics');
 const { server, reload } = require('./server');
@@ -24,6 +24,7 @@ exports.html = html;
 exports.css = css;
 exports.cssAnalyse = analyse;
 exports.scripts = scripts;
+exports.browserify = browserify;
 exports.metrics = metrics;
 
 exports.build = parallel(css, scripts, server);
@@ -50,6 +51,11 @@ function watchFiles() {
     'change',
     browserSync.reload
   );
+  watch(pkg.paths.es_scripts.src, series(browserify)).on(
+    'change',
+    browserSync.reload
+  );
+
   watch(pkg.paths.html.src, series(html)).on('change', browserSync.reload);
 }
 
