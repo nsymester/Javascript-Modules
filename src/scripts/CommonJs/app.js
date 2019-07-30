@@ -1,5 +1,6 @@
 /* /js/CommonJs/app.js */
 
 $(document).ready(function() {
-  background.init();
+  Background.init();
+  Greeting.init();
 });

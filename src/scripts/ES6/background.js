@@ -17,12 +17,12 @@ let DOM = {};
 
 /* ===================== private methods ========================= */
 
-// cache DOM elements
+// 1. cache DOM elements
 function cacheDOM() {
   DOM.$background = $('#background');
 }
 
-// coordinate async assembly of image element and rendering
+// 2. coordinate async assembly of image element and rendering
 function loadImage() {
   let baseUrl = 'https://source.unsplash.com/category',
     cat = 'nature',
@@ -31,7 +31,7 @@ function loadImage() {
   buildElement(`${baseUrl}/${cat}/${size}`).then(render);
 }
 
-// assemble the image element
+// 3. assemble the image element
 function buildElement(source) {
   let deferred = $.Deferred(function(task) {
     let image = new Image();
@@ -50,14 +50,14 @@ function buildElement(source) {
   return deferred.promise();
 }
 
-// render DOM
+// 4. render DOM
 function render(image) {
   DOM.$background.append(image).css('opacity', 1);
 }
 
 /* ===================== public methods ========================= */
 
-// main init method
+// 5. main init method
 function init() {
   cacheDOM();
   loadImage();

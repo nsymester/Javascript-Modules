@@ -10,7 +10,7 @@
  * 5. provide us a way to initialise it
  */
 
-var background = (function() {
+var Background = (function() {
   'use strict';
 
   // placeholder for chached DOM elements
@@ -23,7 +23,7 @@ var background = (function() {
     DOM.$background = $('#background');
   }
 
-  // coordinate async assembly of image element and rendering
+  // 2. coordinate async assembly of image element and rendering
   function loadImage() {
     var baseUrl = 'https://source.unsplash.com/category',
       cat = 'nature',
@@ -32,7 +32,7 @@ var background = (function() {
     buildElement(`${baseUrl}/${cat}/${size}`).then(render);
   }
 
-  // assemble the image element
+  // 3. assemble the image element
   function buildElement(source) {
     var deferred = $.Deferred(function(task) {
       var image = new Image();
@@ -51,14 +51,14 @@ var background = (function() {
     return deferred.promise();
   }
 
-  // render DOM
+  // 4. render DOM
   function render(image) {
     DOM.$background.append(image).css('opacity', 1);
   }
 
   /* ===================== public methods ========================= */
 
-  // main init method
+  // 5. main init method
   function init() {
     cacheDOM();
     loadImage();
