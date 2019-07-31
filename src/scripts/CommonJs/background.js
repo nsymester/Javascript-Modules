@@ -19,7 +19,7 @@ var Background = (function() {
   /* ===================== private methods ========================= */
 
   // 1. cache DOM elements
-  function cacheDOM() {
+  function cacheDom() {
     DOM.$background = $('#background');
   }
 
@@ -60,7 +60,7 @@ var Background = (function() {
 
   // 5. main init method
   function init() {
-    cacheDOM();
+    cacheDom();
     loadImage();
   }
 

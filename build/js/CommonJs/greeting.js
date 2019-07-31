@@ -38,8 +38,8 @@ var Greeting = (function() {
 
   // assemble time-based greeting message
   function makeMessage() {
-    var timeOfDay,
-      theDate = new Date(),
+    var timeOfDay;
+    var theDate = new Date(),
       theHour = theDate.getHours();
 
     if (theHour < 12) {
@@ -47,7 +47,7 @@ var Greeting = (function() {
     } else if (theHour >= 12 && theHour < 17) {
       timeOfDay = 'afternoon';
     } else {
-      timeofDay = 'evening';
+      timeOfDay = 'evening';
     }
 
     return `Good ${timeOfDay}, ${dummy}.`;

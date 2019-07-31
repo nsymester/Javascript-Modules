@@ -19,7 +19,7 @@ var Quote = (function() {
   /* ===================== private methods ========================= */
 
   // cache DOM elments
-  function cacheDOM() {
+  function cacheDom() {
     DOM.$quoteFeature = $('#quote');
     DOM.$quoteLink = $(document.createElement('a'));
     DOM.$author = $(document.createElement('p'));
@@ -68,7 +68,7 @@ var Quote = (function() {
 
   /* ===================== public methods ========================= */
   function init() {
-    cacheDOM();
+    cacheDom();
     getQuote();
   }
 
