@@ -28,7 +28,7 @@ var Quote = (function() {
   // get random quote
   function getQuote() {
     var api = {
-      endpoint: 'https://quotesondesign.com/wp-json/posts',
+      endpoint: 'https://quotesondesign.com/wp-json/wp/v2/posts',
       params: {
         'filter[orderby]': 'rand',
         'filter[posts_per_page]': 1,
@@ -54,9 +54,9 @@ var Quote = (function() {
     DOM.$quoteLink
       .attr('target', '_blank')
       .attr('href', response[0].link)
-      .html(response[0].content);
+      .html(response[0].content.rendered);
 
-    DOM.$author.html(response[0].title);
+    DOM.$author.html(response[0].title.rendered);
 
     DOM.$quoteFeature
       .css('background-color', 'rgba(0,0,0,0.2)')
